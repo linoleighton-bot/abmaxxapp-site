@@ -44,21 +44,23 @@
   .badge:focus-visible { outline: 3px solid #2f6bff; outline-offset: 3px; }
   .note { margin-top: 18px; font-size: 13px; color: #ffffff; opacity: .8; }
   .note a { color: #fff; }
-  /* In-app browser callout (Instagram, Facebook, TikTok, etc.) */
+  /* In-app browser pointer (shown only after a store tap that didn't open) */
   .iab {
-    position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); left: 12px; right: 12px; z-index: 20;
-    display: none; align-items: flex-start; gap: 12px;
-    background: #0f1420; border: 1px solid #2f6bff; border-radius: 14px; padding: 12px 14px;
-    color: #fff; font-size: 14px; line-height: 1.4; box-shadow: 0 12px 30px rgba(0,0,0,.6);
+    position: fixed; top: calc(6px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px)); z-index: 20;
+    display: none; flex-direction: column; align-items: flex-end; gap: 2px;
+    max-width: 230px; text-align: right; pointer-events: none;
   }
   .iab.show { display: flex; }
-  .iab .arrow { flex-shrink: 0; width: 28px; height: 28px; color: #2f6bff; animation: nudge 1.2s ease-in-out infinite; }
-  .iab .arrow svg { width: 28px; height: 28px; }
-  .iab b { display: block; font-weight: 600; margin-bottom: 2px; }
-  .iab .steps { color: #c9cdd6; }
-  .iab .steps kbd { font: inherit; font-weight: 700; color: #fff; }
-  .iab .close { margin-left: auto; flex-shrink: 0; background: none; border: 0; color: #8a90a0; font-size: 20px; line-height: 1; cursor: pointer; padding: 0 2px; }
-  @keyframes nudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(4px, -4px); } }
+  .iab .arrow { width: 26px; height: 26px; color: #2f6bff; margin-right: 2px; animation: nudge 1.1s ease-in-out infinite; }
+  .iab .arrow svg { width: 26px; height: 26px; }
+  .iab .bubble {
+    pointer-events: auto; background: #0f1420; border: 1px solid #2f6bff; border-radius: 12px; padding: 8px 10px;
+    color: #fff; font-size: 13px; line-height: 1.35; box-shadow: 0 10px 24px rgba(0,0,0,.6);
+  }
+  .iab .bubble b { font-weight: 600; }
+  .iab .bubble kbd { font: inherit; font-weight: 700; }
+  .iab .close { pointer-events: auto; background: none; border: 0; color: #8a90a0; font-size: 13px; cursor: pointer; padding: 4px 2px 0; }
+  @keyframes nudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(3px, -4px); } }
   @media (prefers-reduced-motion: reduce) { .iab .arrow { animation: none; } }
   @media (prefers-reduced-motion: reduce) { .badge { transition: none; } }
 </style>
@@ -94,11 +96,8 @@
     <div class="arrow" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M9 6h9v9"/></svg>
     </div>
-    <div>
-      <b>Open in your browser to download</b>
-      <div class="steps" id="iab-steps">Tap the <kbd>···</kbd> menu in the corner, then choose <kbd>Open in browser</kbd>.</div>
-    </div>
-    <button class="close" id="iab-close" aria-label="Dismiss">&times;</button>
+    <div class="bubble"><b>Didn't open?</b> <span id="iab-steps">Tap <kbd>···</kbd> up there, then <kbd>Open in browser</kbd>.</span></div>
+    <button class="close" id="iab-close">Dismiss</button>
   </div>
 
   <script>
@@ -108,15 +107,32 @@
         || (/iPhone|iPad|iPod/.test(ua) && /AppleWebKit/.test(ua) && !/Safari|CriOS|FxiOS|EdgiOS/.test(ua))
         || location.hash === "#inapp";
       if (!inApp) return;
+
       var el = document.getElementById("iab");
       var steps = document.getElementById("iab-steps");
       if (/Android/i.test(ua)) {
-        steps.innerHTML = 'Tap the <kbd>⋮</kbd> menu in the top corner, then choose <kbd>Open in Chrome</kbd> or <kbd>Open in browser</kbd>.';
+        steps.innerHTML = 'Tap <kbd>\u22ee</kbd> up there, then <kbd>Open in Chrome</kbd>.';
       } else {
-        steps.innerHTML = 'Tap the <kbd>···</kbd> menu in the corner, then choose <kbd>Open in Safari</kbd> or <kbd>Open in browser</kbd>.';
+        steps.innerHTML = 'Tap <kbd>\u00b7\u00b7\u00b7</kbd> up there, then <kbd>Open in Safari</kbd>.';
       }
-      el.classList.add("show");
       document.getElementById("iab-close").addEventListener("click", function () { el.classList.remove("show"); });
+
+      // Only show if a store tap did NOT leave the page.
+      var left = false;
+      function markLeft() { left = true; }
+      window.addEventListener("pagehide", markLeft);
+      window.addEventListener("blur", markLeft);
+      document.addEventListener("visibilitychange", function () { if (document.hidden) markLeft(); });
+
+      var badges = document.querySelectorAll(".badge");
+      for (var i = 0; i < badges.length; i++) {
+        badges[i].addEventListener("click", function () {
+          left = false;
+          setTimeout(function () {
+            if (!left && !document.hidden) el.classList.add("show");
+          }, 1800);
+        });
+      }
     })();
   </script>
 </body>
