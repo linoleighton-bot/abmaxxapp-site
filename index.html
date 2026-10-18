@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AbMaxx</title>
+<meta name="description" content="AbMaxx: Become Shredded. Snap a photo, let AI analyze your abs and build a routine from you. Free on the App Store and Google Play.">
+<link rel="canonical" href="https://abmaxxapp.com/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="apple-itunes-app" content="app-id=6757769125">
+<link rel="icon" href="/assets/icon.png" sizes="any">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AbMaxx">
+<meta property="og:title" content="AbMaxx: Become Shredded">
+<meta property="og:description" content="Snap a photo, let AI analyze your abs and build a routine from you. Free on the App Store and Google Play.">
+<meta property="og:url" content="https://abmaxxapp.com/">
+<meta property="og:image" content="https://abmaxxapp.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The AbMaxx logo, a glowing blue six-pack.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AbMaxx: Become Shredded">
+<meta name="twitter:description" content="Snap a photo, let AI analyze your abs and build a routine from you. Free on the App Store and Google Play.">
+<meta name="twitter:image" content="https://abmaxxapp.com/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AbMaxx: Become Shredded",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "HealthApplication",
+  "url": "https://abmaxxapp.com/",
+  "installUrl": "https://apps.apple.com/us/app/abmaxx-become-shredded/id6757769125",
+  "sameAs": ["https://apps.apple.com/us/app/abmaxx-become-shredded/id6757769125", "https://play.google.com/store/apps/details?id=com.rork.abmaxx"],
+  "author": { "@type": "Organization", "name": "Nextgen Labs LLC" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "1900", "bestRating": "5", "worstRating": "1" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --bg: #000000;
+    --surface: #0b0d13;
+    --surface-2: #11141c;
+    --line: rgba(255,255,255,.08);
+    --line-strong: rgba(255,255,255,.16);
+    --fg: #ffffff;
+    --muted: #9aa1b4;
+    --accent: #2f6bff;
+    --accent-hover: #4a7fff;
+    --glow: rgba(47,107,255,.35);
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: var(--bg); }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap {
+    width: 100%; max-width: 1120px; margin-inline: auto;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+  }
+  h1, h2, h3 { letter-spacing: -.02em; line-height: 1.1; text-wrap: balance; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(0,0,0,.7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 18px; letter-spacing: -.01em; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; color: var(--muted); }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--fg); }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 999px;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .pill:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .pill:focus-visible, .badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+  /* Hero */
+  .hero { position: relative; padding-block: 72px 48px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; right: -10%; top: -10%; width: 720px; height: 720px; max-width: 120vw;
+    background: radial-gradient(circle at center, var(--glow) 0%, rgba(47,107,255,.08) 45%, transparent 70%);
+    filter: blur(40px); pointer-events: none;
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .hero h1 { margin-top: 16px; font-size: clamp(40px, 6vw, 68px); font-weight: 800; }
+  .hero h1 span { color: var(--accent); }
+  .lead { margin-top: 20px; max-width: 520px; font-size: clamp(17px, 1.6vw, 19px); color: var(--muted); }
+  .badges { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .badge { display: inline-block; height: 54px; border-radius: 9px; transition: transform .15s ease, opacity .15s ease; }
+  .badge:hover { transform: translateY(-2px); opacity: .92; }
+  .badge svg, .badge img { height: 54px; width: auto; display: block; }
+  .proof { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; font-size: 14px; color: var(--muted); }
+  .proof .stars { color: #ffb020; letter-spacing: 1px; font-size: 13px; }
+  .proof b { color: var(--fg); font-weight: 600; }
+  .hero-visual { position: relative; display: flex; justify-content: center; }
+  .hero-visual::before {
+    content: ""; position: absolute; inset: 10% 15%; border-radius: 50%;
+    background: radial-gradient(circle, var(--glow), transparent 70%); filter: blur(40px);
+  }
+  .screen {
+    position: relative; width: 300px; max-width: 100%; aspect-ratio: 460 / 996; border-radius: 28px; overflow: hidden;
+    border: 1px solid var(--line-strong); background: var(--surface);
+    box-shadow: 0 50px 100px -30px rgba(0,0,0,.9), 0 0 80px -20px var(--glow);
+  }
+  .screen img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Stats */
+  .stats { border-block: 1px solid var(--line); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding-block: 24px; padding-inline: 8px; text-align: center; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: 0; }
+  .stat b { display: block; font-size: 28px; font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  /* Sections */
+  section.block { padding-block: 88px; }
+  .section-head { max-width: 640px; }
+  .section-head h2 { margin-top: 12px; font-size: clamp(30px, 4vw, 44px); font-weight: 800; }
+  .section-head p { margin-top: 14px; color: var(--muted); font-size: 17px; }
+  .features { margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .feature {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; min-width: 0;
+  }
+  .feature .ic {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+    background: rgba(47,107,255,.14); color: var(--accent);
+  }
+  .feature .ic svg { width: 22px; height: 22px; }
+  .feature h3 { margin-top: 20px; font-size: 19px; font-weight: 700; }
+  .feature p { margin-top: 8px; color: var(--muted); font-size: 15px; }
+
+  /* Screens */
+  .screens { background: var(--surface); border-block: 1px solid var(--line); }
+  .shots { margin-top: 44px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .shot {
+    aspect-ratio: 460 / 996; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: #000;
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* CTA */
+  .cta { position: relative; text-align: center; padding-block: 96px; overflow: hidden; }
+  .cta::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 800px; height: 500px; max-width: 150vw;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, var(--glow), transparent 65%); filter: blur(40px); pointer-events: none;
+  }
+  .cta .wrap { position: relative; }
+  .cta img.logo { width: 88px; height: 88px; margin-inline: auto; border-radius: 22px; border: 1px solid var(--line-strong); }
+  .cta h2 { margin-top: 24px; font-size: clamp(32px, 5vw, 52px); font-weight: 800; }
+  .cta p { margin-top: 12px; color: var(--muted); font-size: 17px; }
+  .cta .badges { justify-content: center; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 28px; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--fg); }
+  footer .links { display: flex; gap: 20px; }
+
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero .lead { margin-inline: auto; }
+    .badges, .proof { justify-content: center; }
+    .screen { width: 240px; }
+    .features { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(3) { border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .nav-links { display: none; }
+    section.block { padding-block: 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .pill, .badge { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="AbMaxx home">
+      <img src="assets/icon.png" alt="" width="32" height="32">
+      AbMaxx
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
+      <a class="pill" href="#download">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">AI abs coach · iPhone &amp; Android</p>
+      <h1>Your six-pack<br>starts <span>here.</span></h1>
+      <p class="lead">Snap a photo. AbMaxx analyzes your abs across 1,000 core data points, finds what's holding you back, and builds a routine from you, not a template.</p>
+
+      <div class="badges" id="download">
+        <a class="badge" href="https://apps.apple.com/us/app/abmaxx-become-shredded/id6757769125" aria-label="Download AbMaxx on the App Store">
+          <img src="assets/appstore-badge.svg" alt="Download on the App Store" width="162" height="54">
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.rork.abmaxx" aria-label="Get AbMaxx on Google Play">
+          <svg viewBox="0 0 182 54" role="img" aria-label="Get it on Google Play" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="181" height="53" rx="8" fill="#000" stroke="#a6a6a6"/>
+            <g transform="translate(13 11) scale(1.35)">
+              <path fill="#00D7FE" d="M1.2 0.6 12.1 11.5 1.2 22.4c-.5-.3-.8-.8-.8-1.4V2c0-.6.3-1.1.8-1.4z"/>
+              <path fill="#00F076" d="M15.7 7.9 12.1 11.5 1.2.6c.4-.2.9-.2 1.3 0z"/>
+              <path fill="#FF3A44" d="M15.7 15.1 2.5 22.4c-.4.2-.9.2-1.3 0l10.9-10.9z"/>
+              <path fill="#FFD500" d="M20 10.3c.8.5.8 1.8 0 2.3l-4.3 2.5-3.6-3.6 3.6-3.6z"/>
+            </g>
+            <text x="54" y="21" fill="#fff" font-family="Inter, Roboto, Arial, sans-serif" font-size="9.5" letter-spacing=".6">GET IT ON</text>
+            <text x="54" y="41" fill="#fff" font-family="Inter, Roboto, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="-.2">Google Play</text>
+          </svg>
+        </a>
+      </div>
+
+      <p class="proof">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><b>4.7</b> on the App Store</span>
+        <span><b>1.9K</b> ratings</span>
+        <span>Free to download</span>
+      </p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="screen"><img src="assets/shot-3.webp" alt="AbMaxx analysis screen showing an overall abs score and a breakdown by region" width="460" height="996"></div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>4.7★</b><span>App Store rating</span></div>
+    <div class="stat"><b>1.9K+</b><span>Ratings</span></div>
+    <div class="stat"><b>1,000</b><span>Core data points analyzed</span></div>
+    <div class="stat"><b>Free</b><span>To download</span></div>
+  </div>
+</div>
+
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Precision-built progression, not random training.</h2>
+      <p>Most apps give you generic workouts. AbMaxx builds your plan from you.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <h3>Snap a photo</h3>
+        <p>Our AI analyzes your abs in seconds and finds exactly what's holding them back.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2-6 4 12 2-6h5"/></svg></div>
+        <h3>Get your routine</h3>
+        <p>A plan engineered around your weak areas and your strongest features, adapting as you progress.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></div>
+        <h3>Track visible progress</h3>
+        <p>Visual charts, before-and-after comparisons and milestones that keep you locked in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block screens" id="screens">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Inside the app</p>
+      <h2>Analysis, routines, nutrition. One place.</h2>
+    </div>
+    <div class="shots">
+      <div class="shot"><img src="assets/shot-1.webp" alt="AbMaxx challenges and programs" loading="lazy" width="460" height="996"></div>
+      <div class="shot"><img src="assets/shot-2.webp" alt="AbMaxx exercise guidance" loading="lazy" width="460" height="996"></div>
+      <div class="shot"><img src="assets/shot-3.webp" alt="AbMaxx abs analysis" loading="lazy" width="460" height="996"></div>
+      <div class="shot"><img src="assets/shot-4.webp" alt="AbMaxx nutrition tracking" loading="lazy" width="460" height="996"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <img class="logo" src="assets/icon.png" alt="" width="88" height="88">
+    <h2>Download AbMaxx</h2>
+    <p>Free on iPhone and Android.</p>
+    <div class="badges">
+      <a class="badge" href="https://apps.apple.com/us/app/abmaxx-become-shredded/id6757769125" aria-label="Download AbMaxx on the App Store">
+        <img src="assets/appstore-badge.svg" alt="Download on the App Store" width="162" height="54">
+      </a>
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.rork.abmaxx" aria-label="Get AbMaxx on Google Play">
+        <svg viewBox="0 0 182 54" role="img" aria-label="Get it on Google Play" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="181" height="53" rx="8" fill="#000" stroke="#a6a6a6"/>
+          <g transform="translate(13 11) scale(1.35)">
+            <path fill="#00D7FE" d="M1.2 0.6 12.1 11.5 1.2 22.4c-.5-.3-.8-.8-.8-1.4V2c0-.6.3-1.1.8-1.4z"/>
+            <path fill="#00F076" d="M15.7 7.9 12.1 11.5 1.2.6c.4-.2.9-.2 1.3 0z"/>
+            <path fill="#FF3A44" d="M15.7 15.1 2.5 22.4c-.4.2-.9.2-1.3 0l10.9-10.9z"/>
+            <path fill="#FFD500" d="M20 10.3c.8.5.8 1.8 0 2.3l-4.3 2.5-3.6-3.6 3.6-3.6z"/>
+          </g>
+          <text x="54" y="21" fill="#fff" font-family="Inter, Roboto, Arial, sans-serif" font-size="9.5" letter-spacing=".6">GET IT ON</text>
+          <text x="54" y="41" fill="#fff" font-family="Inter, Roboto, Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="-.2">Google Play</text>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nextgen Labs LLC · AbMaxx</span>
+    <div class="links">
+      <a href="https://abmaxxterms.carrd.co">Terms of Service</a>
+      <a href="https://abmaxxapp.com">abmaxxapp.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
