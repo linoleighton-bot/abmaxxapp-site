@@ -432,9 +432,15 @@ footer { padding: 40px 0 0; border-top: 1px solid var(--line); overflow: hidden;
   .final-card { padding: 60px 22px; border-radius: 28px; }
   .wrap { padding: 0 16px; }
   .laurel { width: 100%; }
-  .trust { font-size: 13px; white-space: nowrap; gap: 10px; padding-right: 14px; }
+  .trust { font-size: 13px; gap: 10px; padding-right: 14px; max-width: 100%; }
+  .hero-copy, .hero-phones { max-width: 100%; }
   .trust .avatars i { width: 26px; height: 26px; font-size: 9px; }
   .benefits-card { padding: 28px; }
+}
+@media (max-width: 380px) {
+  .trust .stars { display: none; }
+  .trust { font-size: 12px; }
+  h1 { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
