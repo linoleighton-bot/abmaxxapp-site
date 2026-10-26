@@ -90,6 +90,19 @@ h3 { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.
 .store:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 3px; }
 .store--play img { height: 54px; }
 
+
+/* Store button pairs */
+.dl { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.dl .btn svg { width: 18px; height: 18px; flex: none; margin-top: -1px; }
+.dl--nav { flex-wrap: nowrap; gap: 8px; }
+.dl--nav .btn { height: 42px; padding: 0 18px; font-size: 14px; }
+.dl--nav .btn svg { width: 16px; height: 16px; }
+.dl--menu { flex-direction: column; align-items: stretch; margin-top: 8px; gap: 8px; }
+.dl--menu .btn { width: 100%; }
+.dl--stack { flex-direction: column; align-items: stretch; margin-top: 18px; }
+.cta-row .dl { justify-content: center; }
+.support-cards--2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-inline: auto; }
+
 /* Nav */
 .nav-wrap { position: fixed; top: 14px; left: 0; right: 0; z-index: 100; padding: 0 16px; pointer-events: none; }
 .nav {
@@ -359,7 +372,7 @@ h3 { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.
 .side-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 14px; }
 .side-card .row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 .side-card .row b { color: #fff; font-size: 15px; }
-.side-card .btn { width: 100%; margin-top: 18px; }
+.side-card .dl .btn { width: 100%; }
 
 /* FAQ */
 .faq { padding: 0 0 120px; }
@@ -445,7 +458,7 @@ footer::before { content: ""; position: absolute; left: 50%; top: 0; width: 60%;
   .benefits-card { grid-template-columns: 1fr; padding: 40px; }
 }
 @media (max-width: 768px) {
-  .nav-links, .nav .btn--primary { display: none; }
+  .nav-links, .nav .dl--nav { display: none; }
   .nav-toggle { display: inline-flex; }
   .nav { padding-right: 10px; }
   .step, .step:nth-child(even) .step-visual { grid-template-columns: 1fr; order: 0; }
@@ -453,7 +466,7 @@ footer::before { content: ""; position: absolute; left: 50%; top: 0; width: 60%;
   .step-visual { min-height: 420px; }
   .step-visual .phone { width: 220px; }
   .chip--a { top: 24px; left: 16px; } .chip--b { top: 90px; right: 16px; } .chip--c { bottom: 70px; left: 16px; }
-  .stats-grid, .review-grid, .feature-grid, .support-cards { grid-template-columns: 1fr; }
+  .stats-grid, .review-grid, .feature-grid, .support-cards, .support-cards--2 { grid-template-columns: 1fr; }
   .feature .visual { height: 240px; }
   .feature .visual .phone { width: 200px; }
   .hero { padding-top: calc(var(--nav-h) + 56px); }
