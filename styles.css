@@ -88,17 +88,15 @@ h3 { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.
 .store img { height: 54px; width: auto; }
 .store:hover { transform: translateY(-2px); }
 .store:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 3px; }
-.store--play img { height: 54px; }
 
 
 /* Store button pairs */
 .dl { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .dl .btn svg { width: 18px; height: 18px; flex: none; margin-top: -1px; }
-.dl--nav { flex-wrap: nowrap; gap: 8px; }
-.dl--nav .btn { height: 42px; padding: 0 18px; font-size: 14px; }
-.dl--nav .btn svg { width: 16px; height: 16px; }
-.dl--menu { flex-direction: column; align-items: stretch; margin-top: 8px; gap: 8px; }
-.dl--menu .btn { width: 100%; }
+.nav-badges { display: flex; align-items: center; gap: 8px; flex: none; }
+.nav-badges .store img { height: 40px; width: auto; }
+.menu-badges { display: flex; justify-content: center; gap: 10px; padding: 14px 8px 6px; border-top: 1px solid var(--line); margin-top: 6px; }
+.menu-badges .store img { height: 48px; width: auto; }
 .dl--stack { flex-direction: column; align-items: stretch; margin-top: 18px; }
 .cta-row .dl { justify-content: center; }
 .support-cards--2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-inline: auto; }
@@ -458,7 +456,7 @@ footer::before { content: ""; position: absolute; left: 50%; top: 0; width: 60%;
   .benefits-card { grid-template-columns: 1fr; padding: 40px; }
 }
 @media (max-width: 768px) {
-  .nav-links, .nav .dl--nav { display: none; }
+  .nav-links, .nav .nav-badges { display: none; }
   .nav-toggle { display: inline-flex; }
   .nav { padding-right: 10px; }
   .step, .step:nth-child(even) .step-visual { grid-template-columns: 1fr; order: 0; }
