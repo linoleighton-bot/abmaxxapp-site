@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="icon" href="mindroll-icon.png">
+<title>MindRoll UGC Brief</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* Layout: one narrow column, examples first, assets, then the one must-have and a freedom note. Dark, minimal, no banners. */
+:root{
+  --bg:#0E0F12; --surface:#16181D; --line:#262A32;
+  --fg:#F3F1EC; --muted:#9BA0AB;
+  --accent:#E08150;
+  --font:"Inter",-apple-system,system-ui,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#FBFAF7; --surface:#FFFFFF; --line:#E6E2DA; --fg:#171A1F; --muted:#5C6270; --accent:#B4552D; color-scheme:light; } }
+:root[data-theme="light"]{ --bg:#FBFAF7; --surface:#FFFFFF; --line:#E6E2DA; --fg:#171A1F; --muted:#5C6270; --accent:#B4552D; color-scheme:light; }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.5;margin:0;
+  padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+a{color:inherit}
+h1,h2{margin:0;text-wrap:balance;letter-spacing:-0.02em}
+h1{font-size:30px;font-weight:700}
+h2{font-size:20px;font-weight:600}
+p{margin:0}
+.muted{color:var(--muted)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.note{font-size:14px;color:var(--muted);max-width:68ch}
+
+header{display:flex;align-items:center;gap:14px}
+header img{width:48px;height:48px;border-radius:12px;flex:none}
+
+section{display:grid;gap:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;min-width:0}
+.card .thumb{position:relative;aspect-ratio:4/3;background:#000}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .play{position:absolute;inset:0;display:grid;place-items:center}
+.card .play span{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.6);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px}
+.card .meta{padding:12px 14px;display:grid;gap:4px}
+.card .meta b{font-size:14px;font-weight:600}
+.card .meta small{font-size:13px;color:var(--muted)}
+.card:hover{border-color:var(--accent)}
+
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ul.plain li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+ul.plain li span{min-width:0}
+button.copy{font:inherit;font-size:13px;font-weight:600;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer;flex:none}
+button.copy:hover,button.copy:focus-visible{color:var(--fg);border-color:var(--fg);outline:none}
+
+.btns{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.btn{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;min-width:0}
+.btn b{font-size:15px;font-weight:600}
+.btn small{font-size:13px;color:var(--muted)}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.primary small{color:inherit;opacity:.7}
+.btn:hover{border-color:var(--accent)}
+
+.must{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;grid-template-columns:1fr 1fr;align-items:center}
+.must img{width:100%;max-width:100%;border-radius:10px;display:block}
+.must .txt{display:grid;gap:8px;min-width:0}
+.must .txt a{font-size:14px}
+@media (max-width:640px){ .must{grid-template-columns:1fr} h1{font-size:26px} }
+footer{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion: no-preference){ .card,.btn{transition:border-color .15s} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header>
+  <img src="mindroll-icon.png" alt="MindRoll app icon">
+  <div>
+    <h1>MindRoll UGC Brief</h1>
+    <p class="muted">Guidance for creators making MindRoll videos.</p>
+  </div>
+</header>
+
+<section>
+  <div>
+    <p class="eyebrow">Examples</p>
+    <h2>The type of content we are looking for</h2>
+    <p class="note">These are not UGC videos we made. They are our competitors' videos, and this content style is what we think will perform best. Subtly integrate MindRoll into videos like these.</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="https://drive.google.com/file/d/1CxdJJRo3I92R2EOk0QPzImPHi2XzgxpF/view" target="_blank" rel="noopener">
+      <div class="thumb"><img src="ex1.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+      <div class="meta"><b>How To Be Good At Anything</b><small>Numbered tips, skill grid behind the creator</small></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/1dzMHwkOloNlEYkDVdL6bVmsAMs0WwzRz/view" target="_blank" rel="noopener">
+      <div class="thumb"><img src="ex2.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+      <div class="meta"><b>How to become The Mentalist</b><small>Pop-culture character hook, stills cut in</small></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/1DB6k2j0dSHKcKYeR3gDYUTX673bAQmcu/view" target="_blank" rel="noopener">
+      <div class="thumb"><img src="ex3.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+      <div class="meta"><b>10/10 habits to become disgustingly overeducated</b><small>Rated listicle, photo strip on top</small></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/19x0W8iJ7yv5va4R7AEXMNSu8sOyILrDq/view" target="_blank" rel="noopener">
+      <div class="thumb"><img src="ex4.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+      <div class="meta"><b>Fast talking head, movie stills</b><small>Captions under the face, high energy</small></div>
+    </a>
+    <a class="card" href="https://drive.google.com/file/d/1GfmEPs7LBXA2MrtYokegtRC1UHsxoHv6/view" target="_blank" rel="noopener">
+      <div class="thumb"><img src="ex5.jpg" alt=""><div class="play"><span>&#9654;</span></div></div>
+      <div class="meta"><b>10/10 things every man should do</b><small>Rated listicle, character stills under the face</small></div>
+    </a>
+    <a class="card" href="https://drive.google.com/drive/folders/1FOp2VS4h6rT0o3l4FbsqBD0CEsxBJek8" target="_blank" rel="noopener">
+      <div class="thumb" style="background:var(--surface)"><div class="play"><span style="padding:0;font-size:24px">+</span></div></div>
+      <div class="meta"><b>All examples</b><small>Opens in Google Drive</small></div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div>
+    <p class="eyebrow">CTAs</p>
+    <h2>Use something similar to these</h2>
+    <p class="note">Drop it in naturally, the way the examples mention their app. Say the name MindRoll. <a href="https://docs.google.com/document/d/1txrugBaecNOUzhjMN2iRuoZCG6He0285X_4ULGbiWhc/edit" target="_blank" rel="noopener">Full CTA list</a>.</p>
+  </div>
+  <ul class="plain" id="ctas">
+    <li><span>"Read books about a topic that interests you. I use this method that has all of the world's best books, but summarized for you with the most valuable information, so I have the knowledge of all the books in way less time."</span><button class="copy" type="button">Copy</button></li>
+    <li><span>"Reading books takes way too much time, so I've been using apps like MindRoll so I just scan any book and scroll through key point summaries in the book, allowing you to read way more books in way less time."</span><button class="copy" type="button">Copy</button></li>
+  </ul>
+</section>
+
+<section>
+  <div>
+    <p class="eyebrow">Assets</p>
+    <h2>Everything is in our Google Drive</h2>
+  </div>
+  <div class="btns">
+    <a class="btn primary" href="https://drive.google.com/drive/folders/1SRvBU9OLonephUFqgxaEmeLVz4yR_D3K" target="_blank" rel="noopener"><b>MindRoll Assets folder</b><small>App Store image, screen recording, app clips</small></a>
+    <a class="btn" href="https://drive.google.com/file/d/16bNkPkCzN5pxGTYzn7oOTp_2sbYTgeFB/view" target="_blank" rel="noopener"><b>App screen recording</b><small>Use this where the examples show their app</small></a>
+    <a class="btn" href="https://drive.google.com/drive/folders/1jHU1XAuTSqGYT-zeRTqvZq_obSc5nVo2" target="_blank" rel="noopener"><b>Logo files</b><small>PNG and SVG</small></a>
+    <a class="btn" href="https://apps.apple.com/us/app/mindroll-get-smarter-daily/id6810303765" target="_blank" rel="noopener"><b>MindRoll on the App Store</b><small>Link for your bio</small></a>
+  </div>
+</section>
+
+<section>
+  <div>
+    <p class="eyebrow">One must-have</p>
+    <h2>Include this image in every video</h2>
+  </div>
+  <div class="must">
+    <img src="appstore-listing.jpg" alt="MindRoll App Store listing: the MindRoll logo, Mindroll: Get Smarter Daily">
+    <div class="txt">
+      <p>This is our App Store screenshot with our logo. Show it in every creative so people know what to search for.</p>
+      <a href="https://drive.google.com/file/d/1rK54XQt2V9c19_it0f0H1ms9-JghLQll/view" target="_blank" rel="noopener">Download the image (IMG_2819.PNG)</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="note">You have freedom. If you think another format or different CTAs will perform better for your audience, do that. This is guidance on what we think will perform best, not a script.</p>
+  <footer>Questions: teammindroll@gmail.com. Send us the post link the same day you post.</footer>
+</section>
+
+</div>
+
+<script>
+document.querySelectorAll('#ctas button.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var text=btn.parentElement.querySelector('span').textContent.trim();
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1200)};
+    try{navigator.clipboard.writeText(text).then(done).catch(function(){select();done()})}catch(e){select();done()}
+    function select(){var r=document.createRange();r.selectNodeContents(btn.parentElement.querySelector('span'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+});
+</script>
+
+</body>
+</html>
